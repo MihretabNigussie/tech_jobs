@@ -4,9 +4,10 @@
 
 <div class="container mt-5">
     <div class="row justify-content-center">
-        Hello, {{auth()->user()->name}}
+        <h2 class="text-center">Hello, {{auth()->user()->name}} </h2>
+        @if(Auth::check() && auth()->user()->user_type == 'employer')
         <p>Your trial will expire on {{auth()->user()->user_trial}}</p>
-
+        @endif
         <div class="col-md-3">
             <div class="card-counter primary">
                 <p class="text-center mt-3 lead">
